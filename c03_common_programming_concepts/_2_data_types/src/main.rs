@@ -6,6 +6,7 @@ fn main() {
 
 
     let x = 57u8;
+    println!("The value of x is: {}", x);
 
 
     // 数据类型
@@ -23,14 +24,17 @@ fn main() {
 
     let tup = (500, 6.4, 1);
     let (x, y, z) = tup;
-    println!("The value of y is: {}", y);
+    println!("The value of y is: {} {} {}", y, x, z);
     let x: (i32, f64, u8) = (500, 6.4, 1);
     let five_hundred = x.0;
     let six_point_four = x.1;
     let one = x.2;
+    println!("The value of y is: {} {} {}", five_hundred, six_point_four, one);
 
     let a: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("The value of y is: {}", a[0]);
     let a = [1, 2, 3, 4, 5];
     let first = a[0];
     let second = a[1];
+    println!("The value of y is: {} {}", first, second);
 }
