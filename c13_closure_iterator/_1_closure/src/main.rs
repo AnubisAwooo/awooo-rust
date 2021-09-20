@@ -4,6 +4,18 @@ fn main() {
     let simulated_random_number = 7;
 
     generate_workout(simulated_user_specified_value, simulated_random_number);
+
+
+
+    let x = vec![1, 2, 3];
+
+    let equal_to_x = move |z| z == x;
+
+    // println!("can't use x here: {:?}", x); // 已经通过 move 把变量所有权转移给闭包，这里就不能使用了
+
+    let y = vec![1, 2, 3];
+
+    assert!(equal_to_x(y));
 }
 
 use std::thread;
