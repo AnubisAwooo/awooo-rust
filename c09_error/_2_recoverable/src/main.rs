@@ -20,6 +20,18 @@ fn main() {
     };
     println!("{:?}", f);
 
+    let f = File::open("hello.txt").unwrap_or_else(|error| { // 这应该是 lambda 表达式
+        if error.kind() == ErrorKind::NotFound {
+            File::create("hello.txt").unwrap_or_else(|error| {
+                panic!("Problem creating the file: {:?}", error);
+            })
+        } else {
+            panic!("Problem opening the file: {:?}", error);
+        }
+    });
+    println!("{:?}", f);
+
+
     let f = File::open("hello.txt").unwrap();
     println!("{:?}", f);
 
